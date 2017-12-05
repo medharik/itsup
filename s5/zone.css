@@ -1,0 +1,49 @@
+*{
+	margin: 0;padding: 0;
+}
+.largeur{
+	width:100%;
+	margin: auto;
+}
+.h{
+height: 60px;	
+}
+#logo{
+width: 200px;
+float: left;	
+}
+#liens{
+	width: 600px;
+
+	float: right;
+}
+#menu{
+	background: #5A6D27;
+}
+
+
+#milieu{
+	
+	height: 500px;
+	background:#000 url('back.png') no-repeat center;
+background-size: 100% 99%;
+}
+
+#bas{
+	min-height: 400px;
+	background: #303030;
+}
+#logo img{
+	height: 90%;
+
+}
+.produit{
+
+	width: 50%;
+	height: 400px;
+	border: 1px grey solid;
+	float: left;
+	box-sizing: border-box;/*pour une dimesion constante*/
+
+}
+
