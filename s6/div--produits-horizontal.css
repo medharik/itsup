@@ -1,0 +1,14 @@
+*{
+	margin: 0;padding: 0;
+}
+#conteneur{
+	width: 620px;
+	border: 1px solid black;
+	margin: auto;
+}
+.produit{
+	width: 200px;
+	height: 300px;
+	border: 1px solid black;
+display: inline-block;
+}

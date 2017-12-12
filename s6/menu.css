@@ -1,0 +1,52 @@
+*{
+	margin: 0;padding: 0;
+	font-family: 'Barlow', sans-serif; 
+}
+/* #menu{
+	background: grey;
+	height: 60px;
+}
+#menu > a{
+background: yellow;
+display:block;
+height: 50px;
+border: 1px solid black;
+width: 130px;
+float: left;
+}
+a+p{
+clear: both;
+} */
+ #menu{
+	
+	width: 420px;
+
+	margin: auto;/*centrer la zone*/
+}
+#menu > a{
+background: blue;
+color: white;
+display: inline-block;
+line-height: 40px;
+height: 40px;
+padding-left: 10px;
+padding-right: 10px;
+text-decoration: none;
+border-right: 1px solid grey;
+}
+#menu > a:last-child{
+border-right: none;
+}
+#menu > a:hover{
+background: none;
+color: red;
+transition: 1s;
+	}
+nav{
+	background: blue;
+}
+.important{
+	color: red;
+	background: pink;
+
+}
