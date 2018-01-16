@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validation form + js +regex</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="validation.js"></script>
+</head>
+<body>
+<!-- 	+ ou {1,}
+	? {0,1}
+	.{1}
+	*{0,} -->
+	<div id="erreur">
+		
+	</div>
+<form>
+	<table align="center" id="f">
+		<tr>
+			<td><label for="email">Email : </label></td>
+<td><input type="text" id="email"  
+	onblur="validerEmail()"></td>
+		</tr>
+		<tr>
+			<td><label for="passe">Mot de passe : </label></td>
+			<td><input type="text" id="passe" onblur="validerPasse()"></td>
+		</tr>
+		<tr>
+			<td><label for="conf">Confirmation :  </label></td>
+			<td><input type="password" id="conf" autocomplete="off" onblur="validerConf()"></td>
+		</tr>
+		<tr>
+			<td><label for="cin">Cin : </label></td>
+			<td><input type="text" id="cin" onchange="validerCin()"></td>
+		</tr>
+		<tr>
+			<td>Sexe :</td>
+			<td><label for="homme">Homme</label><input type="radio" id="homme" name="sexe" value="homme"> 
+<label for="femme">Femme</label>
+				<input type="radio" id="femme" name="sexe"></td>
+		</tr>
+		<tr>
+			<td><label for="sf">Situation familiale </label></td>
+			<td><input type="text" id="sf" list="maliste"></td>
+		</tr>
+		<tr>
+		<td><input type="reset" value="Annuler"></td>
+		<td><input type="button" value="S'incrire" onclick="valider()"></td>
+	</tr>
+	</table>
+	<datalist id="maliste">
+		<option value="marié">marié(e)</option>
+		<option value="célibataire">célibataire</option>
+		<option value="divorcé">divorcé</option>
+	</datalist>
+	
+</form>
+
+</body>
+</html>
