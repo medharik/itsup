@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>css partie  1</title>
+	<meta charset="utf-8">
+	<title>css </title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <!-- form>table>tr*5>((td>label)+(td)) sur emmet
  -->
- <h1>inscription en ligne</h1>
  <form action="">
  	<table align="center" width="300">
  		<tr>
  			<td><label for="pays">Pays</label></td>
  			<td>
- 			<select name="pays" id="pays">
+ 			<select name="pays" id="pays" >
  				<option value="maroc">Maroc</option>
  				<option value="france">France</option>
  				<option selected="">...</option>
@@ -23,9 +23,8 @@
  		</tr>
  		<tr>
  			<td><label for="ville">Ville</label></td>
- 			<td><input type="text" list="villes" name="ville" id="ville">
+ 			<td><input type="text" list="villes" name="ville" id="ville" placeholder="autocompletion activée">
 <datalist id="villes">
-	<option value="casablanca">Casa</option>
 	<option value="">rabat</option>
 	<option value="">chefchaouen</option>
 </datalist>
@@ -35,16 +34,12 @@
  			<td><label for="message">Message</label></td>
  			<td><textarea cols="20" rows="4" id="message"></textarea></td>
  		</tr>
+ 		
  		<tr>
  			<td><label for=""></label></td>
- 			<td></td>
- 		</tr>
- 		<tr>
- 			<td><label for=""></label></td>
- 			<td> <input type="submit" name="" value="valider"></td>
+ 			<td><input type="reset"  value="Rétablir"> <input type="submit" name="" value="valider"></td>
  		</tr>
  	</table>
  </form>
-<h2>remarques</h2>
 </body>
 </html>

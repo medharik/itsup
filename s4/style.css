@@ -5,7 +5,7 @@ label{
 }
 
 td{
-	background: #2482CC;
+	background: #EEEEEE;
 	padding: 10px;
 	border: 2px solid black;
 }
@@ -14,12 +14,12 @@ h1,h2{
 text-align: center;
 border: 1px solid black;
 padding: 4px;
-background: #BEDAF0;
+background: #EEEEEE;
 text-transform: capitalize;
 font-family: 'Roboto Condensed', sans-serif;
 }
 tr td:first-child{
 text-align: right;
-background: yellow;
+background: #EEEEEE;
 
 }
