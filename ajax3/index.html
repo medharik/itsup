@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ajax 3</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+   
+<div class="container " >
+	<div class="col-xs-6 centrer_zone">
+		<div class="alert alert-danger " id="notice"></div>
+		<form class="form-horizontal" id="formproduit">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Produit :</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="libelle">Libellé :</label>  
+  <div class="col-xs-8">
+  <input id="libelle" name="libelle" placeholder="" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="prix">Prix:</label>  
+  <div class="col-xs-8">
+  <input id="prix" name="prix" placeholder="" class="form-control input-md" required="" type="text">
+  <span class="help-block">en DHS</span>  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="btn"></label>
+  <div class="col-xs-4">
+    <button id="btn" name="btn" class="btn btn-primary">Valider</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+<div class="col-xs-6">
+	<img src="" alt="" class="tof img-responsive img-rounded">
+</div>
+
+	</div>
+
+</div>
+<a href="https://google.fr" id="lien">GOOGLE</a>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('.alert').hide();
+	});
+$(document).on('click', '#btn', function(event) {
+
+	event.preventDefault();
+
+$.ajax({
+	url: 'http://localhost/itsup2018/ajax3/controlleur.php',
+	type: 'POST',
+	data: $('#formproduit').serialize(),
+
+	/*{libelle: $('#libelle').val(),prix: $('#prix').val()}*/
+})
+.done(function(data) {
+	$('.alert').show();
+	console.log("success",data);
+	$('.tof').attr({
+		src: 'images/happy.jpg'
+	});
+	$('#notice').html(data)
+
+})
+.fail(function(error) {
+	console.log("error",error);
+	$('.tof').attr({
+		src: 'images/sad.jpg'
+	});
+
+})
+.always(function() {
+	console.log("complete");
+	$('#libelle').val("");
+	$('#prix').val("");
+	$('#formproduit').hide();
+
+});
+
+	
+});
+
+$(document).on('click', '#lien', function(event) {
+	event.preventDefault();
+	
+});
+
+</script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
